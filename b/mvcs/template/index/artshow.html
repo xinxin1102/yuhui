@@ -1,0 +1,200 @@
+{include file="index/header.html"}
+
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/public.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/artshow.css">
+<script src="{JS_PATH}/index/artshow.js"></script>
+
+<div class="titlebox">
+    <h2>{$result[0]["stitle"]}</h2>
+    <div class="info">
+        <span>
+            {if isset($category[0])}
+                {$category[0]["cname"]}
+            {/if}
+        </span>
+        <span class="user">
+            作者：{$result[0]["username"]}
+        </span>
+        <span class="time">
+            {$result[0]["stime"]}
+        </span>
+    </div>
+</div>
+
+<div class="content">
+    {$result[0]["scon"]}
+</div>
+
+<div class="notice notice_true">
+    <div class="navbox">
+        操作成功
+    </div>
+</div>
+<div class="notice notice_false">
+    <div class="navbox">
+        操作失败
+    </div>
+</div>
+<div class="notice notice_other">
+    <div class="navbox">
+        操作失败
+    </div>
+</div>
+{*<!--信息存储区-->*}
+<input type="hidden" name="sid" class="sid" value="{$result[0]['sid']}">
+{*<!--uid1  当前登录的人id -->*}
+<input type="hidden" name="uid1" value="{$uid}">
+{*<!--uid2  作者 -->*}
+<input type="hidden" name="uid2" value="{$uid2}">
+
+<div class="otherinfo">
+    <div class="buttons">
+        {if $guanzhu=="noguanzhu"}
+        <input type="button" class="btn btn-default select love_author" id="love_author" value="关注">
+        {elseif $guanzhu=="guanzhu"}
+        <input type="button" class="btn btn-default select" id="love_author" value="取消关注">
+        {/if}
+
+        {if $love=="nolove"}
+        <input type="button" class="btn btn-default select" id="love_article" value="收藏">
+        {elseif $love=="love"}
+        <input type="button" class="btn btn-default select" id="love_article" value="取消收藏">
+        {/if}
+
+        <input type="button" class="btn btn-default" id="btn_message" value="留言">
+
+        <div id="message_area">
+            <form action="index.php?m=index&f=message&a=addmessage" id="form_message">
+                <textarea class="form-control" rows="3" name="text_message" id="text_message"></textarea>
+                <label for="btn_submessage"></label>
+                <button type="button" class="btn btn-default" id="btn_submessage">
+                    提交
+                </button>
+                <button type="button" class="btn btn-default" id="btn_unmessage">
+                    取消
+                </button>
+            </form>
+            <div class="tishi">
+                您只能输入300个字
+            </div>
+        </div>
+
+    </div>
+<!--留言板-->
+    <ul class="liuyanbox">
+
+        <li style="display:none">
+            <div class="touxiang">
+                <div class="imgbox">
+                    <img src="" alt="">
+                </div>
+                <p class="uname">
+
+                </p>
+            </div>
+            <div class="liuyan_contentbox">
+                <div class="liuyan_content">
+
+                </div>
+                <div class="gongneng">
+                    <div class="replyer">
+                        <!--第<span>{}</span>条回复-->
+                    </div>
+                    <input type="button" class="btn btn-default btn-sm" value="回复" reply_id="" >
+                </div>
+            </div>
+        </li>
+
+        {$i=0}
+        <!--i用来数楼层-->
+        {if $replys=="noreplys"}
+            <li class="noreplys">
+                没有回复
+            </li>
+        {else}
+        {foreach $replys as $k=>$v}
+        <li>
+            <div class="touxiang">
+                <div class="imgbox">
+                    <img src="{$v['imgurl']}" alt="">
+                </div>
+                <p class="uname">
+                    {$v["nickname"]}
+                </p>
+            </div>
+            <div class="liuyan_contentbox">
+                <div class="liuyan_content">
+                    {$v["mcon"]}
+                </div>
+                <div class="gongneng">
+                    <div class="replyer">
+                        {$i++}楼&nbsp;&nbsp;{$v["mtime"]}
+                        <!--第<span>{}</span>条回复-->
+                    </div>
+                    <input type="button" class="btn btn-default btn-sm" value="回复" reply_id="{$v['mid']}" >
+                </div>
+            </div>
+            <!--子集留言 start-->
+            {$j=0}
+            {foreach $replys[$k]["son"] as $v1}
+            <div class="reply_son">
+                <div class="touxiang">
+                    <div class="imgbox">
+                        <img src="{$v1['imgurl']}" alt="">
+                    </div>
+                    <p class="uname">
+                        {$v1["nickname"]}
+                    </p>
+                </div>
+                <div class="liuyan_contentbox">
+                    <div class="liuyan_content">
+                        {$v1["mcon"]}
+                    </div>
+                    <div class="gongneng">
+                        <div class="replyer">
+                            {$j++}楼&nbsp;&nbsp;{$v1["mtime"]}
+                            <!--第<span>{}</span>条回复-->
+                        </div>
+                        <input type="button" class="btn btn-default btn-sm" value="回复" reply_id="{$v1['mid']}">
+                    </div>
+                </div>
+            </div>
+            {/foreach}
+            <!--子集留言 end-->
+        </li>
+        {/foreach}
+        {/if}
+
+    </ul>
+    <!--回复中的回复模版-->
+    <div class="reply_son" style="display:none" id="reply_son_moban">
+        <div class="touxiang">
+            <div class="imgbox">
+                <img src="" alt="">
+            </div>
+            <p class="uname">
+
+            </p>
+        </div>
+        <div class="liuyan_contentbox">
+            <div class="liuyan_content">
+
+            </div>
+            <div class="gongneng">
+                <div class="replyer">
+                    <!--第<span>{}</span>条回复-->
+                </div>
+                <input type="button" class="btn btn-default btn-sm" value="回复" reply_id="">
+            </div>
+        </div>
+    </div>
+
+    <!--回复页码-->
+    <!--{$pages}-->
+
+</div>
+
+
+</body>
+</html>

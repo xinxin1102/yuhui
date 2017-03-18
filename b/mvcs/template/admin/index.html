@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{CSS_PATH}/admin/public.css">
+    <link rel="stylesheet" href="{CSS_PATH}/admin/index.css">
+</head>
+
+<script src="{JS_PATH}/jquery-min.js"></script>
+<script src="{JS_PATH}/admin/index.js"></script>
+
+<body>
+<div class="header">
+    <h2>欢迎{$username}来到博客管理系统</h2>
+    <h5><a href="index.php?m=admin&a=unLogin">退出登录</a></h5>
+</div>
+<div class="bottom">
+    <div class="left">
+        <ul>
+            <li>
+                <span class="opi"><i></i>博客home<b></b></span>
+                <ul class="son">
+                    <li><a href="index.php" target="_blank">come on</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="opi"><i></i>用户管理<b></b></span>
+                <ul class="son">
+                    <li><a href="index.php?m=admin&f=user&a=addUser" target="right">注册用户</a></li>
+                    <li><a href="index.php?m=admin&f=user&a=select" target="right">管理用户</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="opi"><i></i>分类管理<b></b></span>
+                <ul class="son">
+                    <li><a href="index.php?m=admin&f=category&a=addCategory"  target="right">添加分类</a></li>
+                    <li><a href="index.php?m=admin&f=category&a=showCategory" target="right">管理分类</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="opi"><i></i>内容管理<b></b></span>
+                <ul class="son">
+                    <li><a href="index.php?m=admin&f=art&a=addcon" target="right">添加内容</a></li>
+                    <li><a href="index.php?m=admin&f=art&a=showcon" target="right">管理内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="opi"><i></i>推荐位管理<b></b></span>
+                <ul class="son">
+                    <li><a href="index.php?m=admin&f=position&a=addpos" target="right">添加推荐位</a></li>
+                    <li><a href="index.php?m=admin&f=position&a=showpos" target="right">管理推荐位</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="opi"><i></i>master<b></b></span>
+                <ul class="son">
+                    <li><a href="index.php?m=admin&f=upload&a=editinfo" target="right">master管理</a></li>
+                    <li><a href="index.php?m=admin&f=upload&a=imgurl" target="right">master更新</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div class="right">
+        <iframe src="" frameborder="0" name="right">
+
+        </iframe>
+    </div>
+</div>
+</body>
+</html>

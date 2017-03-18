@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="index.php?m=admin&f=upload&a=editinfoInfo" method="post">
+    主机名称：<br/>
+    <input type="text" name="host" value="{$host}"><br/>
+    主机的upload文件夹绝对路径，不写主机：<br/>
+    <input type="text" name="imgfile" value={$imgfile}><br/>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

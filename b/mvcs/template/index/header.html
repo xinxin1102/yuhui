@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>畅谈吧</title>
+    <link rel="stylesheet" href="{CSS_PATH}/index/public.css">
+    <link rel="stylesheet" href="{CSS_PATH}/index/header.css">
+    <link rel="stylesheet" href="{CSS_PATH}/mui.min.css">
+    <script src="{JS_PATH}/mui.min.js"></script>
+    <script src="{JS_PATH}/jquery-min.js"></script>
+    <script src="{JS_PATH}/index/header.js"></script>
+</head>
+<body>
+<div class="topnav">
+	<div class="contents">
+    <div class="message">
+        <a href="index.php">个人博客</a>
+    </div>
+    <ul>
+        {if empty($nickname)}
+        <li><a href="index.php?m=index&f=login&a=startLogin">登录</a></li>
+        <li><a href="index.php?m=index&f=login&a=reg">注册</a></li>
+        {else}
+        <li class="users">hello！{$nickname}</li>
+        <li><a href="index.php?m=index&f=login&a=unlogin">退出登录</a></li>
+        {/if}
+
+        <li><a href="index.php?m=index&f=art&a=addcon">写文章</a></li>
+        <li><a href="index.php?m=index&f=home">个人中心</a></li>
+
+    </ul>
+	</div>
+</div>
+{include file="index/notice.html"}

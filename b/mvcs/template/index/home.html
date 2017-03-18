@@ -1,0 +1,81 @@
+{include file="index/header.html"}
+
+<link rel="stylesheet" href="{CSS_PATH}/index/public.css">
+<link rel="stylesheet" href="{CSS_PATH}/mui.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/home.css">
+<script src="{JS_PATH}/jquery.min.js"></script>
+<script src="{JS_PATH}/index/upload.js"></script>
+<script src="{JS_PATH}/index/home.js"></script>
+
+<div class="content">
+    <div class="topbox">
+        <div class="imgbox">
+            <img src="{$touxiang}" alt="">
+        </div>
+        <div class="leftbox">
+
+            <h3>作者</h3>
+            <ul class="info">
+                <li>
+                    <a href="javascript:;">{$guanzhu}<br/>关注</a>
+                </li>
+                <li>
+                    <a href="javascript:;">{$be_guanzhu}<br/>粉丝</a>
+                </li>
+                <li>
+                    <a href="javascript:;">{$love}<br/>收藏</a>
+                </li>
+                <li>
+                    <a href="javascript:;">{$be_love}<br/>珍藏</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <ul class="mui-table-view">
+        	{foreach $stitles as $v}
+            <li class="mui-table-view-cell">
+                 <a class="mui-navigate-right" href="index.php?m=index&f=art&a=artshow&sid={$v['sid']}">[{$v['cname']}] {$v['stitle']}</a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="txbox">
+          <span>个人资料</span>
+    <div class="add_touxiang">
+        <form action="index.php?m=admin&f=upload&a=addtouxiangInfo" method="post">
+            <input type="file"  name="file" id="img_file"><br/>
+            <div class="box">
+                <div class="img"><img src="" alt=""></div>
+                <div class="img_progress"></div>
+            </div>
+            <input type="hidden" name="imgurl" id="imgurl">
+            <input type="hidden" name="uid" value="{$uid}">
+            <input type="submit" class="btn btn-default select" id="imgurl_btn" value="确认上传">
+        </form>
+    </div>
+    </div>
+</div>
+
+</body>
+<script>
+$(".txbox span").click(function(){
+	$(".add_touxiang").toggle();
+})
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

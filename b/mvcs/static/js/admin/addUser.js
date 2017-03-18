@@ -1,0 +1,38 @@
+/**
+ * Created by lenovo on 2017/3/6.
+ */
+
+$(window).ready(function(){
+    $("#form").validate({
+        rules:{
+            name:{
+                required:true,
+                minlength:5
+            },
+            pass:{
+                required:true,
+                minlength:5
+            },
+            pass2:{
+                required:true,
+                minlength:5,
+                equalTo:"#pass"
+            }
+        },
+        messages:{
+            name:{
+                required:"请输入用户名",
+                minlength:"用户名最少5位"
+            },
+            pass:{
+                required:"请输入密码",
+                minlength:"密码最少5位"
+            },
+            pass2:{
+                required:"请输入密码",
+                minlength:"密码最少5位",
+                equalTo:"两次密码输入不一致"
+            }
+        }
+    })
+})

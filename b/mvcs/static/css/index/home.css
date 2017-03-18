@@ -1,0 +1,95 @@
+/*顶部基础信息 start*/
+.content{
+    height:auto;
+    width:1100px;
+    margin:0 auto;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+.content .topbox{
+    height:100px;
+    width:100%;
+    margin-bottom:10px;
+}
+.topbox .imgbox{
+    height:90px;
+    width:90px;
+    border-radius: 50%;
+    overflow:hidden;
+    float:left;
+    margin-right:20px;
+}
+.topbox .imgbox img{
+    width:100%;
+}
+.topbox .leftbox{
+    float:left;
+}
+.topbox h3{
+    height:30px;
+    line-height:30px;
+    font-weight: 500;
+    font-size:16px;
+    /*border-bottom:1px solid #ddd;*/
+}
+.topbox .info{
+    margin-top:10px;
+    height:40px;
+    border-right:1px solid #ddd;
+}
+.topbox .info li{
+    line-height:20px;
+    width:80px;
+    float:left;
+    text-align:Center;
+    border-left:1px solid #ddd;
+}
+/*顶部基础信息 end*/
+.content h3{
+	font-size: 16px;
+}
+/*上传头像 start*/
+.txbox span{
+	cursor: pointer;
+}
+.add_touxiang{
+	display: none;
+}
+.add_touxiang .box{
+    height:100px;
+    width:100px;
+    border:1px solid #000;
+}
+.add_touxiang .img{
+    height:85px;
+    width:100%;
+}
+.add_touxiang img{
+    height:100%;
+    width:100%;
+}
+.add_touxiang .img_progress{
+    height:15px;
+    width:0;
+    background:red;
+}
+/*上传头像 end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

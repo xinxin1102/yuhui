@@ -1,0 +1,41 @@
+h3{
+    line-height:60px;
+    text-align:Center;
+}
+.info{
+    text-align:Center;
+    line-height:30px;
+    color:#555;
+}
+.info span{
+    margin-right:10px;
+}
+.content{
+    width:600px;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin:0 auto;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+
+#form{
+    display: block;
+    width:600px;
+    margin:0 auto;
+}
+
+.infocontent{
+    min-height:150px;
+    width:600px;
+    margin:0 auto;
+}
+.infocontent .statu{
+    width:260px;
+    float:left;
+}
+.infocontent .position{
+    padding-left:300px;
+    width:290px;
+    min-height:150px;
+}

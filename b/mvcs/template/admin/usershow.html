@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{JS_PATH}/jquery-min.js"></script>
+    <script src="{JS_PATH}/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+</head>
+<body>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th class="text-center">id</th>
+        <th class="text-center">账号</th>
+        <th class="text-center">only-you</th>
+        <th class="text-center">role</th>
+        <th class="text-center">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $aresult as $v}
+    <tr class="text-center">
+        <td>{$v['aid']}</td>
+        <td>{$v['aname']}</td>
+        <td></td>
+        <td>管理员</td>
+        <td>
+            <a class="btn btn-default" href="index.php?m=admin&f=user&a=deluser&aid={$v['aid']}">删除</a>
+        </td>
+    </tr>
+    {/foreach}
+    {foreach $result as $v}
+    <tr class="text-center">
+        <td>{$v['uid']}</td>
+        <td>{$v['uname']}</td>
+        <td>{$v['nickname']}</td>
+        <td>客户</td>
+        <td>
+            <a class="btn btn-default" href="index.php?m=admin&f=user&a=deluser&uid={$v['uid']}">删除</a>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+</body>
+</html>

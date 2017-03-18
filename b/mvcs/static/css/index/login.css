@@ -1,0 +1,29 @@
+.box{
+    padding:30px;
+    width:400px;
+    margin:50px auto;
+    box-shadow: 0 2px 10px #ccc;
+}
+.box h1{
+	display: block;
+	text-align: center;
+
+}
+img.code{
+    height:30px;
+    width:100px;
+    cursor:pointer;
+    margin-top: 20px;
+}
+
+.unlogin{
+    text-align: center;
+}
+
+.box p{
+	text-align: center;
+}
+#dlbtn{
+	margin-left: 142px;
+	margin-bottom: 10px;
+}

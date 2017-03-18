@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="index.php?m=admin&f=position&a=addposInfo" method="post">
+              推荐位：<select name="position" id="">
+
+        {foreach $position as $v}
+        <option value="{$v['posid']}">{$v['posname']}</option>
+        {/foreach}
+
+    </select><br/>
+        推荐位名称：<input type="text" name="posname"><br/>
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>

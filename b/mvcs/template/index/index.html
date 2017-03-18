@@ -1,0 +1,146 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/public.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/index.css">
+
+<div class="box">
+	<div id="slider" class="mui-slider" >  
+	    <div class="mui-slider-group mui-slider-loop">  
+	        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->  
+	        <div class="mui-slider-item mui-slider-item-duplicate">  
+	            <a href="#">  
+	                <img src="{IMG_PATH}/e.jpg">  
+	            </a>  
+	        </div>  
+	        <!-- 第一张 -->  
+	        <div class="mui-slider-item">  
+	            <a href="#">  
+	                <img src="{IMG_PATH}/d.jpg">  
+	            </a>  
+	        </div>  
+	        <!-- 第二张 -->  
+	        <div class="mui-slider-item">  
+	            <a href="#">  
+	                <img src="{IMG_PATH}/c.jpg">  
+	            </a>  
+	        </div>  
+	        <!-- 第三张 -->  
+	        <div class="mui-slider-item">  
+	            <a href="#">  
+	                <img src="{IMG_PATH}/g.jpg">  
+	            </a>  
+	        </div>  
+	        <!-- 第四张 -->  
+	        <div class="mui-slider-item">  
+	            <a href="#">  
+	                <img src="{IMG_PATH}/e.jpg">  
+	            </a>  
+	        </div>  
+	        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->  
+	        <div class="mui-slider-item mui-slider-item-duplicate">  
+	            <a href="#">  
+	                <img src="{IMG_PATH}/d.jpg">  
+	            </a>  
+	        </div>  
+	    </div>    
+	</div> 
+</div>
+
+
+<div class="content">
+	
+    <div class="conlist">
+    	<ul class="author" >
+    		{foreach $result as $v}
+    		<li>
+    			<div class="txs"><img class="imgq" src="{IMG_PATH}/touxiang.jpg" alt="" /></div>
+    			<div class="zuozhe"><a href="index.php?m=index&f=home&sid={$v['sid']}">{$v["username"]}</a></div>
+    		</li>
+    		{/foreach}
+        </ul>	
+        <ul>
+            {foreach $result as $v}
+            <img class="imgs" src="{IMG_PATH}/touxiang.jpg" alt="" />
+            <li class="two">
+                <h3>
+                    <!--<span class="category">
+                        {foreach $category $c}
+                            {if $c["cid"]==$v["cid"]}
+                                [{$c["cname"]}]
+                            {/if}  
+                        {/foreach}
+                    </span>-->
+                    <a href="index.php?m=index&f=art&a=artshow&sid={$v['sid']}">{$v["stitle"]}</a>
+                </h3>
+                <div class="info">
+                    <span class="user">
+                        作者：{$v["username"]}
+                       
+                    </span>
+                    <span class="time">
+                        时间：{$v["stime"]}
+                    </span>
+                     <!--<p> {$v["scon"]|truncate:10:"":true} </p>-->
+                </div>
+                
+            </li>
+            
+            {/foreach}
+        </ul>
+    </div>
+
+    <div class="rightbox">
+    	<div class="listbox hitlist">
+            <h4>推荐作者</h4>
+            <ul>
+                {foreach $hitslist as $v}
+                <li>
+                    <h3>
+                        <a href="index.php?m=index&f=art&a=artshow&sid={$v['sid']}" target="_blank">{$v["username"]}</a>
+                    </h3>
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="listbox hitlist">
+            <h2>点击排行榜</h2>
+            <ul>
+                {foreach $hitslist as $v}
+                <li>
+                    <h3>
+                        <a href="index.php?m=index&f=art&a=artshow&sid={$v['sid']}" target="_blank">{$v["stitle"]}</a>
+                    </h3>
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="listbox lovelist">
+            <h1>收藏排行榜</h1>
+            <ul>
+                {foreach $lovelist as $v}
+                <li>
+                    <h3>
+                        <a href="index.php?m=index&f=art&a=artshow&sid={$v['sid']}" target="_blank">{$v["stitle"]}</a>
+                    </h3>
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="footers">
+	<div class="footer">
+		<div class="f_left"></div>
+		<div class="f_right"></div>
+	</div>
+</div>
+
+</body>
+<script>
+var slider = mui("#slider");  
+slider.slider({  
+    interval: 3000  
+});  
+</script>
+</html>

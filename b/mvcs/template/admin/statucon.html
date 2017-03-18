@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+    <link rel="stylesheet" href="{CSS_PATH}/admin/statucon.css">
+</head>
+<body>
+    <h3>
+        文章标题：{$result[0]["stitle"]}
+    </h3>
+    <p class="info">
+        <span>时间：{$result[0]["stime"]}</span>
+        <span>作者：{$result[0]["username"]}</span>
+    </p>
+    <div class="content">
+        {$result[0]["scon"]}
+    </div>
+    <div class="statu">
+        <form action="index.php?m=admin&f=art&a=statuconInfo" method="post" id="form">
+            <div class="infocontent">
+                <div class="statu">
+                    <h3>审核情况：</h3>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="statu" value="0" {if $result[0]["statu"]==0}checked{/if}>
+                            未审核
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="statu"  value="1" {if $result[0]["statu"]==1}checked{/if} >
+                            审核中
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="statu" value="2" {if $result[0]["statu"]==2}checked{/if} >
+                            审核未通过
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="statu"  value="3" {if $result[0]["statu"]==3}checked{/if} >
+                            审核通过
+                        </label>
+                    </div>
+                </div>
+
+                <!--推荐位-->
+                <div class="position">
+                    <h3>推荐位：</h3>
+                    {foreach $position as $v}
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="posid"  value="{$v['posid']}"       {if $v['posid']==$result[0]['posid']}checked{/if} >
+                            {$v['posname']}
+                        </label>
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+
+            <input type="hidden" name="sid" value="{$result[0]['sid']}">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
