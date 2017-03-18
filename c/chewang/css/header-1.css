@@ -1,0 +1,38 @@
+/*右侧定位导航 start*/
+.zyx_younav{
+	width: 35px;
+	height: 120px;
+	position: fixed;
+	right:10px;
+	bottom: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	z-index:100;
+}
+.zyx_younav div{
+	width: 35px;
+	height: 72px;
+	background: #4C4C4C;
+	overflow: hidden;
+}
+.zyx_younav .zyx_top{
+	margin-top: 8px;
+}
+.zyx_younav img:hover{
+	opacity: 0.9;
+}
+.zyx_weixin{
+	position: fixed;
+	bottom:0;
+	right:50px;
+	z-index: 120;
+	display: none;
+}
+.zyx_xinlang{
+	position: fixed;
+	bottom:40px;
+	right:50px;
+	z-index: 120;
+	display: none;
+}
+/*右侧定位导航 end*/

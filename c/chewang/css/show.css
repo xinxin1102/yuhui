@@ -1,0 +1,11 @@
+.zyx_show{
+	width: auto;
+	height: 30px;
+	/*background:pink;*/
+	text-align: right;
+	line-height: 30px;
+	margin-top:20px;
+}
+.zyx_show b{
+	margin-right:30px;
+}

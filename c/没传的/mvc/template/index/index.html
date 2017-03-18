@@ -1,0 +1,186 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/index.css" />
+<section id="home" class="text-center">
+    <div class="templatemo_headerimage">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="{IMG_PATH}/1.jpg" alt="Slide 1">
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">Welcome to the blog</h1><br>
+                            <p>This is a free speech</p>
+                            <a href="index.php?m=index&f=login&a=init" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Join Us</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="{IMG_PATH}/2.jpg" alt="Slide 2">
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">Bold talk</h1><br>
+                            <p>You can say out your ideas</p>
+                            <a href="index.php?m=index&f=login&a=init" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Join Us</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="{IMG_PATH}/3.jpg" alt="Slide 3">
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">Listen to</h1><br>
+                            <p>Views, to make friends</p>
+                            <a href="index.php?m=index&f=login&a=init" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Join Us</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end home -->
+<!--<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费模板</a></div>-->
+<!-- start about -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-7 wow fadeInLeft" data-wow-delay="2000">
+                <h3>欢迎来到博客中心</h3>
+                <h2>你想看的都在这里</h2>
+                <p>作为网络日记是带有很明显的私人性质的，而Blog则是私人性和公共性的有效结合，它绝不仅仅是纯粹个人思想的表达和日常琐事的记录，它所提供的内容可以用来进行交流和为他人提供帮助，是可以包容整个互联网的，具有极高的共享精神和价值。一个Blog就是一个网页，它通常是由简短且经常更新的Post所构成；这些张贴的文章都按照年份和日期排列。其他Blogs则是一群人基于某个特定主题或共同利益领域的集体创作。Blog好像是对网络传达的实时讯息。</p>
+            </div>
+            <div class="col-sm-6 col-md-5 wow fadeInRight" data-wow-delay="2000">
+                <h3>Fun Time</h3>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="{IMG_PATH}/company-img-1.jpg" class="img-responsive">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="{IMG_PATH}/company-img-2.jpg" class="img-responsive">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="{IMG_PATH}/work-img-1.jpg" class="img-responsive">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="{IMG_PATH}/company-img-4.jpg" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end about -->
+<!--文章动态-->
+<div class="container main">
+    <div class="row">
+        <div class="col-sm-8 main-left neirong">
+
+            {foreach $result as $v}
+            <div class="usercon">
+                <!--头像部分-->
+                <div class="container-fluid">
+                    <div class="row user">
+                        <div class="photo">
+                            {if $v['photo']}
+                            <img src="{$v['photo']}" alt="" />
+                            {else}
+                            <img src="{IMG_PATH}/bjt.jpg" alt="" />
+                            {/if}
+                        </div>
+                        <div class="col-sm-2 photoes username">
+                            <span>{$v["uid"]}</span>
+                            <!--<span>1111111234</span>-->
+                        </div>
+                        <div class="col-sm-2 photoes times">
+                            <span>{$v["stime"]}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--具体的内容-->
+                <ul class="mui-table-view clearmoren mui-table-view-cell" style="max-height: 116px;">
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="index.php?m=index&f=ccc&a=show&id={$v['sid']}">
+                            <!--<img class="mui-media-object mui-pull-right " src="http://placehold.it/40x30">-->
+                            <div class="mui-media-body">
+                                <span class="stitle">{$v["stitle"]}</span>
+                                <p class="mui-ellipsis scon" >{$v["scon"]}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {/foreach}
+        </div>
+
+
+
+        <div class="col-sm-4 main-right">
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    浏览排行榜
+                </a>
+                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+
+
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    关注排行榜
+                </a>
+                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- start contact -->
+<section id="contact" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <h3>opinion</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>Your comments and Suggestions is our development power</p>
+            </div>
+            <div class="col-md-2"></div>
+            <form action="#" method="post">
+                <div class="col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                    <input type="text" placeholder="Name" class="form-control">
+                </div>
+                <div class="col-md-4 wow fadeInDown" data-wow-delay="2000">
+                    <input type="email" placeholder="Email" class="form-control" required>
+                </div>
+                <div class="col-md-4 wow fadeInRight" data-wow-delay="2000">
+                    <input type="text" placeholder="Subject" class="form-control">
+                </div>
+                <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                    <textarea placeholder="Message" class="form-control"></textarea>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-6 wow fadeInUp" data-wow-delay="2000">
+                    <input type="submit" value="SHOOT MESSAGE" class="form-control">
+                </div>
+                <div class="col-md-3"></div>
+            </form>
+        </div>
+    </div>
+    <div class="google_map">
+        <div id="map-canvas"></div>
+    </div>
+
+</section>
+<!-- end contact -->
+
+
+
+</body>
+</html>

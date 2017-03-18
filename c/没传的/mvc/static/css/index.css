@@ -1,0 +1,60 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,li,input{
+	margin:0;
+	padding:0;
+	list-style: none;
+
+
+}
+
+a{
+	color:#333;
+	text-decoration: none;
+}
+.usercon{
+	height: 250px;
+}
+.photo{
+	width:50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+}
+.photo>img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.row{
+	font-size: 14px;
+	color:#999;
+}
+.col-sm-4>span{
+	cursor: pointer;
+}
+.row .photoes{
+	margin-left:30px;
+}
+.row>.username>a{
+	color:#000;
+	text-decoration: none;
+}
+.photoes{
+	width:180px;
+	margin-right:20px;
+	position: absolute;
+	left:40px;
+}
+.times{
+	position: absolute;
+	left:140px;
+}
+.stitle{
+	font-size: 20px;
+	color:#000;
+	font-weight: bold;
+}
+.scon{
+	margin-top:10px ;
+}
+

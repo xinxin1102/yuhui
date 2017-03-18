@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{CSS_PATH}/111.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+<div class="login">
+    <h2>Acced Form</h2>
+    <div class="login-top">
+        <h1>LOGIN</h1>
+        <form action="index.php?m=admin&f=index&a=check" method="post">
+            <input type="text" value="User Id" name="aname">
+            <input type="password" value="password" name="apass" autocomplete="off">
+            <input type="text"  name="code" value="Verification">
+            <img src="index.php?m=admin&f=index&a=code" onclick="this.src='index.php?m=admin&f=index&a=code&'+Math.random()" width="150" height="60"/>
+            <div class="forgot">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+
+    </div>
+    <div class="login-bottom">
+        <h3><a href="#">Welcome</a></h3>
+    </div>
+</div>
+</body>
+</html>

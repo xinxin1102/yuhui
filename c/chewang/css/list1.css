@@ -1,0 +1,148 @@
+.zyx_bannerbox{
+	width:100%;
+	height: 170px;
+}
+.zyx_banner{
+	width:auto;
+	height: 100%;
+	margin:0 auto;
+	text-align: center;
+	overflow: hidden;
+	position:relative;
+}
+.zyx_bannerbox img{
+	height: 200px;
+}
+.zyx_banner h1{
+	font-weight: normal;
+	font-size:48px;
+	color:#fff;
+	position: absolute;
+	top:40px;
+	left:240px;
+}
+.zyx_kids{
+	width:auto;
+	height: 72px;
+	position: absolute;
+	right:180px;
+	bottom:-28px;
+}
+.zyx_kids li{
+	width:128px;
+	height:50px;
+	background:#000;
+	opacity: 0.8;
+	color:#fff;
+	float:left;
+	margin-right:2px;
+	border-radius: 5px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 50px;
+}
+.zyx_kids li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color:#fff;
+}
+.zyx_kids li>a:hover{
+	color:#000;
+}
+.zyx_kids li:hover{
+	background: #fff;
+	opacity:1;
+}
+.zyx_kids .zyx_kidslist{
+	background: #fff;
+	opacity:1;
+	color:#000;
+}
+.zyx_kids .zyx_kidslist a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color:#000;
+}
+/*banner end*/
+.zyx_xwzxbox{
+	width:1170px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+.zyx_xwzx{
+	width:920px;
+	height:auto;
+	margin: 0 auto;
+}
+.zyx_xwzx li{
+	width:920px;
+	height: 160px;
+	border-bottom:1px solid #eee;
+	position: relative;
+}
+.zyx_xwzx li .zyx_title{
+	font-size:20px;
+	color:#2A5D84;
+	font-weight: bold;
+	position: absolute;
+	left:20px;
+	top:40px;
+}
+.zyx_xwzx li a:hover{
+	text-decoration: underline;
+}
+.zyx_xwzx li p{
+	font-size:16px;
+	position: absolute;
+	left:20px;
+	top:80px;
+}
+.zyx_xwzx li div{
+	width:100px;
+	height:26px;
+	position: absolute;
+	left:20px;
+	top:120px;
+}
+.zyx_xwzx li div h6{
+	float: right;
+	margin-right: 10px;
+	font-weight: normal;
+	color:#999;
+	line-height: 16px;
+}
+.zyx_xwzx li div .zyx_xwzximg{
+	position: absolute;
+	left:0;
+	top:0;
+}
+.zyx_btnbox{
+	width:auto;
+	height: 34px;
+	margin-top:100px;
+	margin-bottom:100px;
+	margin-left: 600px;
+}
+.zyx_xwzx .zyx_btnbox a,.zyx_xwzx .zyx_btnbox span{
+	float:left;
+	border:1px solid #999;
+	width:32px;
+	height:32px;
+	line-height: 32px;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #eee;
+	margin-left:-1px;
+}
+.zyx_xwzx .zyx_btnbox span:hover,.zyx_xwzx .zyx_btnbox a:hover{
+	background: blue;
+	color: white;
+}
+.zyx_xwzx .zyx_btnbox span{
+	background: blue;
+	color: white;
+}
+/*新闻中心 end*/
